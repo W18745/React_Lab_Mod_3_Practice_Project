@@ -23,7 +23,7 @@
 
 
 .pricing-app .preheading {
-  font-family: dosis, sans-serif;
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   line-height: 1;
   margin: 0;
@@ -37,4 +37,68 @@
 
 .right {
   margin-right: 0;
+}
+
+.cost-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cost-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.cost-table th,
+.cost-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.cost-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.section-total {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.grand-total {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #eef6ff;
+  border-left: 6px solid #007acc;
+  font-size: 20px;
+  font-weight: bold;
+  color: #007acc;
+}
+
+.total-cost button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.total-cost button:hover {
+  background-color: #005fa3;
 }
