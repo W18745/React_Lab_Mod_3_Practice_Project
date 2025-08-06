@@ -4,10 +4,11 @@ import TotalCost from "./TotalCost";
 import { useSelector, useDispatch } from "react-redux";
 import { incrementQuantity, decrementQuantity } from "./venueSlice";
 import { incrementAVQuantity, decrementAVQuantity } from "./avSlice";
-import { incrementMealQuantity, decrementMealQuantity } from "./mealsSlice";
+import { toggleSelectedMeal } from "./mealsSlice";
 
 const ConferenceEvent = () => {
   const [showItems, setShowItems] = useState(false);
+  const [numberOfPeople, setNumberOfPeople] = useState(1);
 
   const venueItems = useSelector((state) => state.venue);
   const avItems = useSelector((state) => state.av);
@@ -48,23 +49,21 @@ const ConferenceEvent = () => {
     }
   };
 
-  const handleAddMealToCart = (index) => {
-    dispatch(incrementMealQuantity(index));
+  // Meals: only toggle selection
+  const handleMealCheckbox = (index) => {
+    dispatch(toggleSelectedMeal(index));
   };
 
-  const handleRemoveMealFromCart = (index) => {
-    if (meals[index].quantity > 0) {
-      dispatch(decrementMealQuantity(index));
-    }
-  };
+  // Calculate total meal cost
+  const totalMealsCost = meals
+    .filter((item) => item.selected)
+    .reduce((total, item) => total + item.cost * numberOfPeople, 0);
 
   const totalCosts = {
     totalVenueCost: venueItems.reduce((total, item) => total + item.cost * item.quantity, 0),
     totalAVCost: avItems.reduce((total, item) => total + item.cost * item.quantity, 0),
-    totalMealsCost: meals.reduce((total, item) => total + item.cost * item.quantity, 0),
+    totalMealsCost,
   };
-
-  const items = { venue: venueItems, av: avItems, meals };
 
   return (
     <>
@@ -155,30 +154,39 @@ const ConferenceEvent = () => {
             {/* --- Meals Section --- */}
             <div id="meals" className="venue_container container_main">
               <h1 className="section-heading">Meals</h1>
+              <div style={{ marginBottom: "1rem" }}>
+                <label>
+                  Number of People:{" "}
+                  <input
+                    type="number"
+                    min={1}
+                    value={numberOfPeople}
+                    onChange={(e) => setNumberOfPeople(Number(e.target.value))}
+                    style={{ width: "60px" }}
+                  />
+                </label>
+              </div>
               <div className="venue_selection">
                 {meals.map((item, index) => (
                   <div className="venue_main" key={index}>
-                    <div>{item.name}</div>
+                    <label>
+                      <input
+                        type="checkbox"
+                        checked={item.selected}
+                        onChange={() => handleMealCheckbox(index)}
+                      />{" "}
+                      {item.name}
+                    </label>
                     <div>${item.cost}</div>
-                    <div className="button_container">
-                      <button
-                        className={item.quantity === 0 ? "btn-disabled" : "btn-minus"}
-                        onClick={() => handleRemoveMealFromCart(index)}
-                      >
-                        &ndash;
-                      </button>
-                      <span className="selected_count">{item.quantity}</span>
-                      <button
-                        className={item.quantity === 100 ? "btn-disabled" : "btn-plus"}
-                        onClick={() => handleAddMealToCart(index)}
-                      >
-                        &#43;
-                      </button>
+                    <div>
+                      {item.selected
+                        ? `Total: $${item.cost * numberOfPeople}`
+                        : ""}
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="total_cost">Total: ${totalCosts.totalMealsCost}</div>
+              <div className="total_cost">Total: ${totalMealsCost}</div>
             </div>
           </div>
         ) : (
@@ -187,6 +195,7 @@ const ConferenceEvent = () => {
               venueItems={venueItems}
               avItems={avItems}
               meals={meals}
+              numberOfPeople={numberOfPeople}
               handleClick={() => setShowItems(false)}
             />
           </div>

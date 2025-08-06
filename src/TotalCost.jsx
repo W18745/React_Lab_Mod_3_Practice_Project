@@ -1,29 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "./TotalCost.css";
 
-const TotalCost = ({ venueItems, avItems, meals, handleClick }) => {
+const TotalCost = ({ venueItems, avItems, meals, numberOfPeople, handleClick }) => {
   const [totals, setTotals] = useState({
     venue: 0,
     av: 0,
     meals: 0,
-    grandTotal: 0
+    grandTotal: 0,
   });
 
   useEffect(() => {
     const venueTotal = venueItems.reduce((sum, item) => sum + item.cost * item.quantity, 0);
     const avTotal = avItems.reduce((sum, item) => sum + item.cost * item.quantity, 0);
-    const mealsTotal = meals.reduce((sum, item) => sum + item.cost * item.quantity, 0);
+    const mealsTotal = meals
+      .filter((item) => item.selected)
+      .reduce((sum, item) => sum + item.cost * numberOfPeople, 0);
 
     setTotals({
       venue: venueTotal,
       av: avTotal,
       meals: mealsTotal,
-      grandTotal: venueTotal + avTotal + mealsTotal
+      grandTotal: venueTotal + avTotal + mealsTotal,
     });
-  }, [venueItems, avItems, meals]);
+  }, [venueItems, avItems, meals, numberOfPeople]);
 
   const renderTable = (title, items) => {
-    const filtered = items.filter(item => item.quantity > 0);
+    let filtered;
+    if (title === "Meals") {
+      filtered = items.filter((item) => item.selected);
+    } else {
+      filtered = items.filter((item) => item.quantity > 0);
+    }
 
     return (
       <div className="cost-section">
@@ -39,7 +46,9 @@ const TotalCost = ({ venueItems, avItems, meals, handleClick }) => {
               <tr>
                 <th>Item</th>
                 <th>Unit Cost</th>
-                <th>Quantity</th>
+                <th>
+                  {title === "Meals" ? "Number of People" : "Quantity"}
+                </th>
                 <th>Total</th>
               </tr>
             </thead>
@@ -48,8 +57,17 @@ const TotalCost = ({ venueItems, avItems, meals, handleClick }) => {
                 <tr key={index}>
                   <td>{item.name}</td>
                   <td>${item.cost}</td>
-                  <td>{item.quantity}</td>
-                  <td>${item.cost * item.quantity}</td>
+                  <td>
+                    {title === "Meals"
+                      ? numberOfPeople
+                      : item.quantity}
+                  </td>
+                  <td>
+                    $
+                    {title === "Meals"
+                      ? item.cost * numberOfPeople
+                      : item.cost * item.quantity}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -70,7 +88,9 @@ const TotalCost = ({ venueItems, avItems, meals, handleClick }) => {
             <h3 className="preheading">Total cost for the event</h3>
           </div>
           <div>
-            <h2 id="pre_fee_cost_display" className="price">${totals.grandTotal}</h2>
+            <h2 id="pre_fee_cost_display" className="price">
+              ${totals.grandTotal}
+            </h2>
           </div>
         </div>
       </div>
