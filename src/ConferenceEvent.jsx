@@ -9,6 +9,8 @@ const ConferenceEvent = () => {
     const [showItems, setShowItems] = useState(false);
     const [numberOfPeople, setNumberOfPeople] = useState(1);
     const venueItems = useSelector((state) => state.venue);
+    const avItems = useSelector((state) => state.av);
+    const mealsItems = useSelector((state) => state.meals);
     const dispatch = useDispatch();
     const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
 
@@ -31,19 +33,21 @@ const ConferenceEvent = () => {
         }
       };
       const handleIncrementAvQuantity = (index) => {
-    dispatch(incrementAvQuantity(index));
-    };
+        dispatch(incrementAvQuantity(index));
+        };
 
     const handleDecrementAvQuantity = (index) => {
-    dispatch(decrementAvQuantity(index));
+        dispatch(decrementAvQuantity(index));
     };
 
     const handleMealSelection = (index) => {
        const item = mealsItems[index];
        if(item.selected && item.type === "mealForPeople"){
+        // Ensure numberOfPeople is set before toggling selection
         const newNumberOfPeople = item.selected ? numberOfPeople : 0;
         dispatch(toggleMealSelection(index, newNumberOfPeople));
-       }else{
+       }
+       else{
         dispatch(toggleMealSelection(index));
        }
     };
@@ -130,11 +134,7 @@ const ConferenceEvent = () => {
         return totalCost;
       };
     
-    
-    
-    
-    
-    
+        
       const venueTotalCost = calculateTotalCost("venue");
       const avTotalCost = calculateTotalCost("av");
       const mealsTotalCost = calculateTotalCost("meals");
@@ -145,11 +145,11 @@ const ConferenceEvent = () => {
           }
         }
       }
-    const totalCost = {
+    const totalCosts = {
         venue: venueTotalCost,
         av: avTotalCost,
         meals: mealsTotalCost,
-    }
+    };
 
     return (
         <>
@@ -290,7 +290,7 @@ const ConferenceEvent = () => {
         </div>
     ))}
                                 </div>
-                                <div className="total_cost">Total Cost: {mea} </div>
+                                <div className="total_cost">Total Cost: {mealsTotalCost} </div>
 
 
                             </div>
