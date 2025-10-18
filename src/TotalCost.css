@@ -1,40 +1,162 @@
+/* =============================
+   TOTAL COST MAIN CONTAINER
+============================= */
 .pricing-app {
- margin-top: 20px;
- /* margin-left: 40vw; */
- width: 100vw;
- height: 100vh;
- display: flex;
- align-items: center;
- justify-content: center;
-}
-
-
-.display_box {
-  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8, #e1ecf7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 8vh; /* Keeps content below navbar */
+  padding-bottom: 5vh;
   box-sizing: border-box;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  background-color: white;
-  color: #333;
-  margin: 0;
-  padding: 55px;
-  width: 80vw;
 }
 
+/* =============================
+   COST SLIP / DISPLAY BOX
+============================= */
+.display_box {
+  width: 85%;
+  max-width: 60rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.15);
+  padding: 3vh 3vw;
+  color: #133b6a;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-.pricing-app .preheading {
-  font-family: dosis, sans-serif;
+.display_box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2);
+}
+
+/* =============================
+   HEADER AND PRICE STYLES
+============================= */
+.header h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #133b6a;
+  margin-bottom: 1rem;
   text-transform: uppercase;
-  line-height: 1;
-  margin: 0;
-  /* padding: 0 0 10px; */
-  font-size: 25px;
 }
 
-.pricing-app h2 {
-  font-size: 60px;
+.price {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #efc16b;
+  margin: 1.5rem 0;
 }
 
-.right {
-  margin-right: 0;
+/* =============================
+   ITEMS SECTION
+============================= */
+.render_items {
+  margin-top: 2vh;
+  padding: 2vh 2vw;
+  background-color: #f8fafc;
+  border-radius: 0.8rem;
+  border: 0.1rem solid #d9e2ec;
+  text-align: left;
+  font-size: 1rem;
+  color: #133b6a;
+  line-height: 1.5;
+}
+
+/* =============================
+   DOWNLOAD BUTTON
+============================= */
+.download-btn {
+  background-color: #133b6a;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2.2rem;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 3vh;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #efc16b;
+  color: #133b6a;
+  transform: scale(1.05);
+}
+
+.download-btn:active {
+  transform: scale(0.98);
+}
+
+/* =============================
+   RESPONSIVE DESIGN
+============================= */
+@media (max-width: 768px) {
+  .display_box {
+    width: 90%;
+    padding: 2.5vh 4vw;
+  }
+
+  .header h3 {
+    font-size: 1.4rem;
+  }
+
+  .price {
+    font-size: 2rem;
+  }
+
+  .download-btn {
+    width: 80%;
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+  .pdf_button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #133b6a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.pdf_button:hover {
+  background-color: #efc16b;
+  color: #133b6a;
+  transform: translateY(-2px);
+}
+
+}
+
+@media (max-width: 480px) {
+  .display_box {
+    width: 95%;
+    padding: 2vh 5vw;
+  }
+
+  .header h3 {
+    font-size: 1.2rem;
+  }
+
+  .price {
+    font-size: 1.8rem;
+  }
+
+  .render_items {
+    font-size: 0.95rem;
+  }
+
+  .download-btn {
+    width: 90%;
+    font-size: 0.9rem;
+    margin-top: 2vh;
+  }
 }
