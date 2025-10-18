@@ -1,13 +1,12 @@
 .pricing-app {
- margin-top: 20px;
- /* margin-left: 40vw; */
- width: 100vw;
- height: 100vh;
- display: flex;
- align-items: center;
- justify-content: center;
+  margin-top: 20px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-
 
 .display_box {
   text-align: center;
@@ -19,20 +18,46 @@
   margin: 0;
   padding: 55px;
   width: 80vw;
+  position: relative;
 }
-
 
 .pricing-app .preheading {
   font-family: dosis, sans-serif;
   text-transform: uppercase;
   line-height: 1;
   margin: 0;
-  /* padding: 0 0 10px; */
   font-size: 25px;
 }
 
 .pricing-app h2 {
   font-size: 60px;
+  margin-top: 15px;
+}
+
+/* ✅ PDF Button Styles */
+.pdf-button {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.pdf-button:active {
+  transform: scale(0.98);
 }
 
 .right {
