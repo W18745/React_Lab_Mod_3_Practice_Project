@@ -34,6 +34,24 @@ export const venueSlice = createSlice({
       cost: 1100,
       quantity: 0,
     },
+    {
+        img: "https://pixabay.com/get/ge525c696edf95770fc6b824fd077e3aafcaabe57e953f35c5a5987fd7c36a62cdc14c0f1077d652cb1011318f5ea1c5a_1280.jpg",
+        name: "Premium Room (Capacity:12)",
+        cost: 1500,
+        quantity: 0,
+      },
+      {
+        img: "https://pixabay.com/get/gcc4ecd28f5422bf020f38061ee070a48d27543f6fc813d49f84b917e65f0ee597a1daecc513d59f77d722024916ffb2671d9fbaa65d4b20d866daa191d3f1a79_1280.jpg",
+        name: "Training Room (Capacity:40)",
+        cost: 1000,
+        quantity: 0,
+      },
+      {
+        img: "https://pixabay.com/get/gd91a7f4ff05c44b61e22b87c5c0907d28160c2b5be82a098778866e6f6c425fa4128ca2b72758b7ad5add2940974b624960392182437a7aaeafc9e1b827b3664_1280.jpg",
+        name: "Social Event Room (Capacity:100)",
+        cost: 2500,
+        quantity: 0,
+      },
   
   ],
   reducers: {
@@ -56,5 +74,4 @@ export const venueSlice = createSlice({
 });
 
 export const { incrementQuantity, decrementQuantity } = venueSlice.actions;
-
 export default venueSlice.reducer;
