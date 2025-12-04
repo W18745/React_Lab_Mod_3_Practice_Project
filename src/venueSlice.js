@@ -52,6 +52,7 @@ export const venueSlice = createSlice({
         state[index].quantity--;
       }
     },
+    
   },
 });
 
