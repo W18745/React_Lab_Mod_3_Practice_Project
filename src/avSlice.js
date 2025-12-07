@@ -2,18 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const avSlice = createSlice({
   name: "av",
-  initialState: [
-    
-  ],
-
+  initialState: [],
 
   reducers: {
-    incrementAvQuantity: (state, action) => {
-      
-    },
-    decrementAvQuantity: (state, action) => {
-     
-    },
+    incrementAvQuantity: (state, action) => {},
+    decrementAvQuantity: (state, action) => {},
   },
 });
 
