@@ -1,6 +1,10 @@
 // venueSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState =[
+    { name: "Auditotrium Hall (Capacity:200)", quanatity 0
+ }
+]
 export const venueSlice = createSlice({
   name: "venue",
   initialState: [
