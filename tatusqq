@@ -1,0 +1,132 @@
+[33mcommit def68258078759187ddbc07042cd92ac622832be[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Anton Durov <antondurov05@protonmail.com>
+Date:   Sat Feb 14 06:39:38 2026 -0500
+
+    Added meals and venue selection handling
+
+[33mcommit f1287fd3f4bd53580a256a58e423b41bab5fcc2f[m
+Author: Anton Durov <antondurov05@protonmail.com>
+Date:   Sat Feb 14 05:43:37 2026 -0500
+
+    initialized initialState
+
+[33mcommit 754750324d8eb5d03309bd7580502024cb8b9cda[m
+Author: RichaArora1989 <richaar@skillup.tech>
+Date:   Tue Jun 11 00:13:26 2024 +0530
+
+    images link1
+
+[33mcommit 27932dd4d458824bb3c196e2c212119893b79d5d[m
+Author: RichaArora1989 <richaar@skillup.tech>
+Date:   Tue Jun 11 00:08:16 2024 +0530
+
+    images link
+
+[33mcommit bc4f447a0ef560821c2dba519b83c18ac88d35fa[m
+Author: RichaArora1989 <richaar@skillup.tech>
+Date:   Wed Jun 5 18:29:56 2024 +0530
+
+    headings change
+
+[33mcommit dcdde111f5be7bf03fcb5f018917b3f60ebb6531[m
+Merge: 881e3df 3bdda99
+Author: RichaArora1989 <richaar@skillup.tech>
+Date:   Tue May 28 22:54:18 2024 +0530
+
+    ibm git now practice
+
+[33mcommit 3bdda99caec2e81d2cb091098707fa53955b05ac[m
+Author: ibm-skills-network-bot <70593948+ibm-skills-network-bot@users.noreply.github.com>
+Date:   Tue May 28 08:22:49 2024 -0400
+
+    Initial commit
+
+[33mcommit 881e3dff2645acfcb8026d15153daf979ea242f1[m
+Author: RichaArora1989 <richaar@skillup.tech>
+Date:   Mon May 20 14:18:12 2024 +0530
+
+    information spelling correction
+
+[33mcommit 4ae1ffe52ab32256b6c2e226250950c851bbe166[m
+Author: RichaArora1989 <richaar@skillup.tech>
+Date:   Fri May 17 17:54:15 2024 +0530
+
+    bgcolor
+
+[33mcommit b82e482e1f5dd9ab4a2fe7ddb6cb26fe0446b2ca[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Thu May 16 00:23:05 2024 +0530
+
+    venue slice
+
+[33mcommit 221bae5154c48db2db1341b8111bb151f841e038[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Wed May 15 17:55:03 2024 +0530
+
+    css changes
+
+[33mcommit d99f065cd7515f69abbefe5bd209663b4aa8a0bb[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Wed May 15 17:23:15 2024 +0530
+
+    change2
+
+[33mcommit 4412ca716787be787ae700fe1a3e164086966fda[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Wed May 15 17:18:22 2024 +0530
+
+    changes
+
+[33mcommit 6f689b070d8f88025601f1ad7d95fb71d0b9a01a[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Mon May 13 18:11:39 2024 +0530
+
+    initial change
+
+[33mcommit 9c13a1d9dfc2e23c4b7eefca077cce7c8e84f02e[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Mon May 13 16:48:23 2024 +0530
+
+    initial
+
+[33mcommit 51768602ced6b896bc5747ba88960f0c88ea609f[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Mon May 13 16:47:23 2024 +0530
+
+    initial commit
+
+[33mcommit 8113a1480f5e89274ff60a8c9c6a5ef293ebf581[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Thu May 9 23:30:31 2024 +0530
+
+    initial commit
+
+[33mcommit af5a3c5eb7e739cf02ef76869843e4746748a744[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Fri May 3 20:19:32 2024 +0530
+
+    name change3
+
+[33mcommit 5ba32807627f0e6a08e496699aaa4ea56e52a9f7[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Fri May 3 20:16:14 2024 +0530
+
+    name change2
+
+[33mcommit 6ab8cc39a47157a60df81542feb6d71fa6ed8444[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Fri May 3 20:13:52 2024 +0530
+
+    name change
+
+[33mcommit 4c374bf84de3e4635941cedc0dc7f4e555053705[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Fri May 3 19:50:30 2024 +0530
+
+    name change
+
+[33mcommit 25429bb7bd69c3c7cb669e32a504dc1224350fc1[m
+Author: Richa Arora <richaaeri9988@gmail.com>
+Date:   Fri May 3 16:53:54 2024 +0530
+
+    initial
